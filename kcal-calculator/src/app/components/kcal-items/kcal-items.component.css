@@ -1,0 +1,27 @@
+.form-container, .table-container{
+    margin-bottom: 2.5rem;;
+}
+.form-container{
+    margin-top:1rem;
+}
+.table-container {
+    width: 49%;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0rem 1rem 2.5rem 1rem;
+    vertical-align: top;
+}
+.table-container.left{
+    margin-left: 0px;
+}
+.table-container.right{
+    margin-right: 0px;;
+}
+@media screen and (max-width:768px){
+    .table-container {
+        width:100%;
+        margin: 1rem auto;
+    }
+}
+  
+  

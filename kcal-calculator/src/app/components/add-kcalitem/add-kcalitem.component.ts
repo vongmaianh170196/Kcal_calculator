@@ -18,25 +18,24 @@ export class AddKcalitemComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit() {
-    var textReg = new RegExp(/[a-zA-Z]/);
     if (!this.weight || !this.kcal || !this.date) {
       alert("Please fill in empty fields");
     }
-    else if(!(/[a-zA-Z]/.test(this.name))){
+    else if (!(/[a-zA-Z]/.test(this.name))) {
       alert("Name field only accpets character from A-Z");
     }
-   else{
-     
-    const newKcal = {
-      kcal: this.kcal * this.weight / 100,
-      date: new Date(this.date).toLocaleDateString()
+    else {
+
+      const newKcal = {
+        kcal: this.kcal * this.weight / 100,
+        date: new Date(this.date).toLocaleDateString()
+      }
+      this.onAddItem.emit(newKcal);
+      this.name = '';
+      this.weight = 0;
+      this.kcal = 0;
+      this.date = '';
     }
-    this.onAddItem.emit(newKcal);
-    this.name = '';
-    this.weight = 0;
-    this.kcal = 0;
-    this.date = '';
-   }
-    
+
   }
 }

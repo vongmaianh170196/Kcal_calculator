@@ -8,7 +8,7 @@ import { KcalAverage } from 'src/app/models/KcalAverage';
   styleUrls: ['./kcal-average.component.css']
 })
 export class KcalAverageComponent implements OnInit {
-  tableHeaders: string[] = ['average','month', 'year'];
+  tableHeaders: string[] = ['year','month', 'average'];
   @Input() kcalDataSource : MatTableDataSource<KcalAverage>;
 
   constructor() { }

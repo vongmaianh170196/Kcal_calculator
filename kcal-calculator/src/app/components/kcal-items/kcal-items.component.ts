@@ -6,6 +6,8 @@ import { KcalAverage } from '../../models/KcalAverage';
 import {KcalItem} from '../../models/KcalItem';
 import { KcalItemService } from '../../services/kcal-item.service';
 
+const LIMIT_ITEMS = 200;
+
 @Component({
   selector: 'app-kcal-items',
   templateUrl: './kcal-items.component.html',
@@ -16,6 +18,7 @@ export class KcalItemsComponent implements OnInit, AfterViewInit {
   kcalDataSource = new MatTableDataSource<KcalAverage>();
 
   kcalItems: KcalItem[] = [];
+  showedForm = false;
 
   subsctiption: Subscription;
 
@@ -28,7 +31,8 @@ export class KcalItemsComponent implements OnInit, AfterViewInit {
       this.kcalItems = results.map(element => {
         element.date = new Date(element.date).toLocaleDateString(); 
         return element;
-      })      
+      }) 
+      if(this.kcalItems.length < LIMIT_ITEMS) this.showedForm = true;     
       this.setDataTable();      
       this.ngAfterViewInit();
     });

@@ -5,7 +5,6 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatInputModule} from '@angular/material/input';
 
 import { AppComponent } from './app.component';
-import { ButtonComponent } from './components/button/button.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { KcalItemsComponent } from './components/kcal-items/kcal-items.component';
@@ -17,7 +16,6 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    ButtonComponent,
     KcalItemsComponent,
     KcalAverageComponent,
     KcalItemComponent,
