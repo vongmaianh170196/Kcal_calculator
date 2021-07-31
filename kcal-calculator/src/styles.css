@@ -64,6 +64,7 @@ form .form-control input:focus-visible {
     border: none;
     outline: none;
     cursor: pointer;
+    display:block;
 }
 .btn.btn-primary{
     background:#027102;
