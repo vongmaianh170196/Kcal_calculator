@@ -1,0 +1,19 @@
+<form (ngSubmit)="onSubmit()">
+    <mat-form-field class="form-control" appearance="fill" >
+        <mat-label>Name of the product</mat-label>
+        <input matInput placeholder="Ex. sandwich" type="text" name="name" [(ngModel)]="name">
+    </mat-form-field>
+    <mat-form-field class="form-control" appearance="fill">
+        <mat-label>Weight (gram)</mat-label>
+        <input matInput placeholder="200" type="number" [(ngModel)]="weight" name="weight" min="0">
+    </mat-form-field>
+    <mat-form-field class="form-control" appearance="fill">
+        <mat-label>Kcal per 100gr</mat-label>
+        <input matInput placeholder="Ex. 40" type="number" [(ngModel)]="kcal" name="kcal" min="0">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Date</mat-label>
+        <input matInput placeholder="Ex. 31/07/2021" type="date" [(ngModel)]="date" name="date" >
+    </mat-form-field>
+    <input type="submit" value="Add item" class="btn btn-primary"/>
+</form>
