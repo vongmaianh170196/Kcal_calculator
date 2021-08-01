@@ -32,14 +32,12 @@ export class KcalItemsComponent implements OnInit, AfterViewInit {
         element.date = new Date(element.date).toLocaleDateString(); 
         return element;
       }) 
-      if(this.kcalItems.length < LIMIT_ITEMS) this.showedForm = true;     
+      this.showedForm = this.kcalItems.length < LIMIT_ITEMS;     
       this.setDataTable();      
-      this.ngAfterViewInit();
     });
     
   }
   ngAfterViewInit() {
-    this.itemsDataSource.paginator = this.paginator;
   }
   ngOnDestroy(){
     this.subsctiption.unsubscribe();
@@ -103,6 +101,9 @@ export class KcalItemsComponent implements OnInit, AfterViewInit {
     
     this.itemsDataSource._updateChangeSubscription();
     this.kcalDataSource._updateChangeSubscription();
+
+    this.showedForm = this.kcalItems.length < LIMIT_ITEMS;
+    this.itemsDataSource.paginator = this.paginator;
   }
   getMonth(month:string): string{
     let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];

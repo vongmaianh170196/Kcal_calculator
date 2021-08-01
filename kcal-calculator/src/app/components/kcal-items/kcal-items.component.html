@@ -1,6 +1,9 @@
 <div class="form-container"  *ngIf="showedForm" >
     <app-add-kcalitem (onAddItem)="addItem($event)"></app-add-kcalitem>
 </div>
+<div class="form-container"  *ngIf="!showedForm" >
+    <p class="note">Maximum capacity exceeded</p>
+</div>
 <div class="mat-elevation-z8 table-container left">
     <app-kcal-item [itemsDataSource]="itemsDataSource"></app-kcal-item>
     <mat-paginator 

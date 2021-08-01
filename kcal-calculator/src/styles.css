@@ -21,6 +21,11 @@ body {
     display: block;
     margin: 0 auto;
 }
+.note{
+    font-weight: 700;
+    color: #b70505;
+    font-size: 1.125rem;
+}
 /* form */
 form {
     background: #f8f8f8;
